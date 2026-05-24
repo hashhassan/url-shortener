@@ -1,45 +1,79 @@
-# URL SHORTENER
+URL Shortener
+A fully Dockerised URL shortening service built with Node.js, Express, MongoDB, and Nginx — deployed to AWS EC2 with an automated GitHub Actions CI/CD pipeline.
 
-This is a url shortening service built using MongoDB, Express.js, Node.js and Bootstrap with the EJS templating engine.
+Built by Muhammad Hassan Adil as a portfolio project for Cloud Engineering.
 
-## Project Setup
 
-```javascript
-1. Clone the repo
-2. cd url-shortener
-3. npm install
-4. make a .env file with the following keys: MONGOURI, BASEURL
-5. npm run dev
-6. Open the project on 127.0.0.1:3004
-```
+Tech Stack
 
-## Features
+Node.js + Express.js
+MongoDB
+EJS Templating Engine
+Nginx (Reverse Proxy)
+Docker + Docker Compose
+GitHub Actions (CI/CD)
+AWS EC2
 
-1. Shorten any URL of your choice
-2. Feature to create your own unique custom URL code
-3. Timestamp for the url
-4. Archive page to keep a record of all the shortened URLs
-5. Counter for every URL (to keep track of how many times a particular short link was used)
-6. Edit and Delete any URL
-7. API also created for the app i.e. any external application can use this shortener via hitting the api endpoint
 
-## Technology Stack
+Features
 
-- MongoDB
-- Express.js
-- Node.js
-- EJS Templating Engine
+Shorten any URL of your choice
+Create your own custom short URL code
+Timestamp for every URL
+Archive page with a record of all shortened URLs
+Click counter for every short link
+Edit and Delete any URL
+REST API endpoint for external applications
 
-### Check out the deployed application at:
 
-- http://shortener.anantmathur.me/
-  OR
-- ~~http://prakriti.cf~~
+Project Architecture
+Browser → Nginx (Port 80) → Node.js App (Port 3004) → MongoDB
+All three services run as Docker containers orchestrated via Docker Compose.
 
-### Miscellaneous
+Local Setup (Without Docker)
 
-- It is being used by multiple student societies / clubs in my college with the short urls receving thousands of clicks till date.
+Clone the repo
+cd url-shortener
+npm install
+Create a .env file with the following keys:
 
-#### Contributiong
+MONGOURI=mongodb://localhost:27017/urlshortener
+BASEURL=http://127.0.0.1:3004
 
-Feel free to fork this repo and raise an issue or submit a PR in case of any bugs.
+npm run dev
+Open at http://127.0.0.1:3004
+
+
+Local Setup (With Docker)
+
+Clone the repo
+Make sure Docker Desktop is running
+Run:
+
+docker-compose up --build
+
+Open at http://localhost (served via Nginx on port 80)
+
+No need to install Node or MongoDB locally — Docker handles everything.
+
+CI/CD Pipeline
+Every push to the main branch triggers a GitHub Actions workflow that:
+
+SSHs into the AWS EC2 instance
+Pulls the latest code from GitHub
+Rebuilds and restarts all Docker containers automatically
+
+
+Deployment
+Live on AWS EC2 — link will be added after deployment.
+
+About
+
+Developer: Muhammad Hassan Adil
+GitHub: https://github.com/hashhassan
+LinkedIn: https://www.linkedin.com/in/hassan-adil-2a305837a/
+Portfolio: https://d2pilg8gi06pkk.cloudfront.net/
+
+Original Project
+
+Base application cloned from Anantm007/url-shortener. All DevOps work — Docker, Nginx reverse proxy, and GitHub Actions CI/CD pipeline to AWS EC2 — added independently.

@@ -73,7 +73,7 @@ router.post("/shorten", async (req, res) => {
       const code = shortid.generate();
 
       // Short URL
-      const shorturl = baseurl + code;
+      const shorturl = baseurl + "/" + code;
 
       const newUrl = new Url({
         longurl: longurl,
@@ -111,7 +111,7 @@ router.post("/custom/:code", async (req, res) => {
       const url = await Url.findOne({ code: req.params.code });
 
       const baseurl = BASEURL;
-      const urln = baseurl + custom;
+      const urln = baseurl + "/" + custom;
 
       var newvalues = { $set: { code: custom, shorturl: urln } };
 
@@ -194,7 +194,7 @@ router.post("/edit/:id", async (req, res) => {
     const newValues = {
       longurl: req.body.longurl,
       code: req.body.code,
-      shorturl: BASEURL + req.body.code,
+      shorturl: BASEURL + "/" + req.body.code,
     };
 
     // check if custom code already exists
