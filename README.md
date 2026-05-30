@@ -72,8 +72,11 @@ About
 Developer: Muhammad Hassan Adil
 GitHub: https://github.com/hashhassan
 LinkedIn: https://www.linkedin.com/in/hassan-adil-2a305837a/
-Portfolio: https://d2pilg8gi06pkk.cloudfront.net/
+Portfolio: https://hassanadil.me
 
-Original Project
+## Original Project
 
-Base application cloned from Anantm007/url-shortener. All DevOps work — Docker, Nginx reverse proxy, and GitHub Actions CI/CD pipeline to AWS EC2 — added independently.
+Base application by [Anantm007/url-shortener](https://github.com/Anantm007/url-shortener).
+All DevOps work (Dockerization, Nginx reverse proxy, 
+GitHub Actions CI/CD pipeline to AWS EC2) added 
+independently by Muhammad Hassan Adil.
