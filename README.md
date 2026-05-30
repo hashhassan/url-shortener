@@ -63,10 +63,6 @@ SSHs into the AWS EC2 instance
 Pulls the latest code from GitHub
 Rebuilds and restarts all Docker containers automatically
 
-
-Deployment
-Live on AWS EC2 — link will be added after deployment.
-
 About
 
 Developer: Muhammad Hassan Adil
